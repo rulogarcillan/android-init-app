@@ -7,4 +7,5 @@
         <attr name="fontTypeMedium" format="string" />
         <attr name="fontTypeBold" format="string" />
     </declare-styleable>
+
 </resources>

@@ -13,8 +13,6 @@ import javax.inject.Singleton
 interface AppComponent {
 
     fun inject(app: App)
-    fun inject(mainActivity: MainActivity)
-    fun inject(globalFragmnent: GlobalFragment)
-    /*fun inject(fragment: SelectNamesFragment)
-    fun inject(fragment: FavoritesFragment)*/
+    fun inject(main: MainActivity)
+    fun inject(fragment: GlobalFragment)
 }

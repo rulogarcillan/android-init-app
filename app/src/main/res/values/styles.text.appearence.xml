@@ -6,7 +6,7 @@
         <item name="android:fontFamily">?attr/fontTypeThin</item>
     </style>
 
-    <style name="fontlight">
+    <style name="fontLight">
         <item name="fontFamily">?attr/fontTypeLight</item>
         <item name="android:fontFamily">?attr/fontTypeLight</item>
     </style>

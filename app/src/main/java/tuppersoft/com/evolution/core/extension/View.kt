@@ -14,6 +14,6 @@ fun View.visible() {
     this.post { this.visibility = View.VISIBLE }
 }
 
-fun View.invisible() {
+fun View.gone() {
     this.post { this.visibility = View.GONE }
 }

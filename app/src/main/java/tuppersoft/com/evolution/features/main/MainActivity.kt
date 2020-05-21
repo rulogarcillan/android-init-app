@@ -1,39 +1,36 @@
 package tuppersoft.com.evolution.features.main
 
 import android.os.Bundle
-import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.FragmentTransaction
+import androidx.appcompat.app.AppCompatDelegate
+import kotlinx.android.synthetic.main.activity_main.fab
+import kotlinx.android.synthetic.main.activity_main.toolbar
+import tuppersoft.com.data.repositories.SharedPreferencesRepository.loadPreference
+import tuppersoft.com.data.repositories.SharedPreferencesRepository.savePreference
 import tuppersoft.com.evolution.R
-import tuppersoft.com.evolution.core.di.viewmodel.ViewModelFactory
-import tuppersoft.com.evolution.core.extension.viewModel
 import tuppersoft.com.evolution.core.platform.GlobalActivity
-import tuppersoft.com.evolution.databinding.MainActivityBinding
-import javax.inject.Inject
 
 class MainActivity : GlobalActivity() {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelFactory
-
-    private lateinit var mainViewModel: MainViewModel
-    private lateinit var mainActivityDataBinding: MainActivityBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        appComponent.inject(this)
-        mainActivityDataBinding = DataBindingUtil.setContentView(this, R.layout.main_activity)
-        mainActivityDataBinding.lifecycleOwner = this
-        initViewModel()
-
-        val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.flContainerFragment, MainFragment.newInstance())
-        transaction.commit()
+        setContentView(R.layout.activity_main)
+        setSupportActionBar(toolbar)
+        delegate.localNightMode = this.loadPreference("THEME_MODE", delegate.localNightMode)
+        fab.setOnClickListener {
+            changeTheme()
+        }
     }
 
-    private fun initViewModel() {
-        mainViewModel = viewModel(viewModelFactory) {}
-        mainActivityDataBinding.viewModel = mainViewModel
-        mainViewModel.setToolbarTitle(getString(R.string.app_name))
+    private fun changeTheme() {
+        if (this.loadPreference(
+                "THEME_MODE",
+                delegate.localNightMode
+            ) == AppCompatDelegate.MODE_NIGHT_YES
+        ) {
+            delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_NO
+        } else {
+            delegate.localNightMode = AppCompatDelegate.MODE_NIGHT_YES
+        }
+        this.savePreference("THEME_MODE", delegate.localNightMode)
     }
 }
-

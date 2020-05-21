@@ -10,9 +10,9 @@ object SharedPreferencesRepository {
     /**
      * Guarda cualquier valor primitivo en el shared preferences
      */
-    inline fun <reified T> savePreference(mContext: Context, key: String, value: T) {
+    inline fun <reified T> Context.savePreference(key: String, value: T) {
 
-        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(mContext)
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val editor = sharedPreferences.edit()
 
         when (value) {
@@ -29,8 +29,8 @@ object SharedPreferencesRepository {
     /**
      * Carga cualquier valor primitivo del shared preferences
      */
-    inline fun <reified T : Any> loadPreference(mContext: Context, key: String, defaultValue: T): T {
-        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(mContext)
+    inline fun <reified T : Any> Context.loadPreference(key: String, defaultValue: T): T {
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         return when (defaultValue) {
             is Boolean -> sharedPreferences.getBoolean(key, defaultValue) as T
             is Float -> sharedPreferences.getFloat(key, defaultValue) as T
@@ -44,8 +44,8 @@ object SharedPreferencesRepository {
     /**
      * Elimina la shared preference para la key dada
      */
-    fun removePreference(context: Context, key: String) {
-        val mySPrefs = PreferenceManager.getDefaultSharedPreferences(context)
+    fun Context.removePreference(key: String) {
+        val mySPrefs = PreferenceManager.getDefaultSharedPreferences(this)
         val editor = mySPrefs.edit()
         if (mySPrefs.contains(key)) {
             editor.remove(key)

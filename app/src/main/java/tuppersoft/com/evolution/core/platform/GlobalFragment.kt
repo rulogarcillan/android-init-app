@@ -18,8 +18,6 @@ import javax.inject.Inject
 
 abstract class GlobalFragment : Fragment() {
 
-    protected abstract val toolbarTitle: String
-
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
     private lateinit var mainViewModel: MainViewModel
@@ -32,7 +30,6 @@ abstract class GlobalFragment : Fragment() {
         super.onCreate(savedInstanceState)
         appComponent.inject(this)
         initViewModel()
-        configToolbar()
     }
 
     private fun initViewModel() {
@@ -41,9 +38,5 @@ abstract class GlobalFragment : Fragment() {
         }
     }
 
-    private fun configToolbar() {
-        if (::mainViewModel.isInitialized) {
-            mainViewModel.setToolbarTitle(toolbarTitle)
-        }
-    }
+
 }

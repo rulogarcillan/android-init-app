@@ -1,23 +1,12 @@
 package tuppersoft.com.evolution.features.main
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import tuppersoft.com.evolution.core.platform.GlobalViewModel
+import androidx.lifecycle.ViewModel
 import javax.inject.Inject
 
 /**
- * Created by Raúl Rodríguez Concepción on 2019-12-20.
+ * Created by Raúl Rodríguez Concepción on 22/05/2020.
  * Talento Mobile
  * raulrcs@gmail.com
  */
 
-class MainViewModel @Inject constructor() : GlobalViewModel() {
-
-    private val _toolbarTitle: MutableLiveData<String> = MutableLiveData("")
-    val toolbarTitle: LiveData<String>
-        get() = _toolbarTitle
-
-    fun setToolbarTitle(title: String) {
-        _toolbarTitle.value = title
-    }
-}
+class MainViewModel @Inject constructor() : ViewModel()

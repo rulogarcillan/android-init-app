@@ -18,14 +18,4 @@ class AppModule(private val app: Application) {
     @Singleton
     fun provideApplication(): Application = app
 
-    /*@Provides
-    @Singleton
-    fun provideChessDatabase(): AppBabyNamesDatabase = getBabyNamesDatabase(app)
-
-    private fun getBabyNamesDatabase(app: Application): AppBabyNamesDatabase {
-        return Room.databaseBuilder(
-            app,
-            AppBabyNamesDatabase::class.java, "database-baby-names"
-        ).build()
-    }*/
 }
