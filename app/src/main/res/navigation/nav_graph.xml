@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="tuppersoft.com.evolution.features.main.MainFragment"
+        android:name="com.tuppersoft.squeleton.features.main.MainFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/main_fragment">
 

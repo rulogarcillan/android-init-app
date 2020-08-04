@@ -1,42 +1,42 @@
 {
   "project_info": {
-    "project_number": "296636673625",
-    "firebase_url": "https://evolution-84440.firebaseio.com",
-    "project_id": "evolution-84440",
-    "storage_bucket": "evolution-84440.appspot.com"
+    "project_number": "346850068266",
+    "firebase_url": "https://esqueleton-app.firebaseio.com",
+    "project_id": "esqueleton-app",
+    "storage_bucket": "esqueleton-app.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:296636673625:android:4f80d40e1239cb1f0b0b48",
+        "mobilesdk_app_id": "1:346850068266:android:a0636e6d3fc92733888053",
         "android_client_info": {
-          "package_name": "tuppersoft.com.evolution"
+          "package_name": "com.tuppersoft.squeleton"
         }
       },
       "oauth_client": [
         {
-          "client_id": "296636673625-u4cvfpt9li9n83suopvqc5f3i8gutk1u.apps.googleusercontent.com",
+          "client_id": "346850068266-uc4otk3s06rbsr6kcr9rl34k013g7iaa.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "tuppersoft.com.evolution",
+            "package_name": "com.tuppersoft.squeleton",
             "certificate_hash": "dd24ba1c33f6740cbf6b3cc87ecd03787f4fbc01"
           }
         },
         {
-          "client_id": "296636673625-5ioio6ren5npa5oi15ermebifb68otru.apps.googleusercontent.com",
+          "client_id": "346850068266-1gk54hpm5ehacbhan7rdlnq8i0egbcc5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBDgOGEQ9zJw8pSPzvn2bBkic9kMa2e44w"
+          "current_key": "AIzaSyD_cp05Vk2lnb1N2su6fRDWb6F9VKqmmGE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "296636673625-5ioio6ren5npa5oi15ermebifb68otru.apps.googleusercontent.com",
+              "client_id": "346850068266-1gk54hpm5ehacbhan7rdlnq8i0egbcc5.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
