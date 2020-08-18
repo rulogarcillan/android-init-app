@@ -10,7 +10,7 @@ ext {
     buildVersion = "30.0.1"
 
 
-    kotlin_version = "1.4-M2"
+    kotlin_version = "1.3.72"
     //android libs
 
     coroutines_core_version = "1.3.6"
